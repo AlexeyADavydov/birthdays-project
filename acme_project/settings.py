@@ -98,9 +98,9 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = BASE_DIR / 'collected_static'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static_dev',
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static_dev',
+# ]
 
 MEDIA_ROOT = BASE_DIR / 'media'
 
