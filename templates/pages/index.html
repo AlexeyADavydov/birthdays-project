@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Проект Birthdays</h1>
+  <p>Проект направлен на сохранение дней рождения друзей</p>
+
+
+<div class="row">
+  <div class="col-3">
+    Количество записей о днях рождения<br />в нашем проекте:
+  </div>
+  <div class="col-9">
+    <div class="display-1">{{ total_count }}</div>
+  </div>
+</div>
+{% endblock %} 
