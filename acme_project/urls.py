@@ -1,15 +1,12 @@
-#from django.contrib.auth.forms import UserCreationForm
+import debug_toolbar
 from users_app.forms import CustomUserCreationForm
 from django.views.generic.edit import CreateView
 
-from django.conf import settings # НЕ ДЛЯ РЕЛИЗА - ИЗОБРАЖЕНИЯ (*1)
-from django.conf.urls.static import static # *1
+from django.conf import settings
+from django.conf.urls.static import static
 
 from django.contrib import admin
 from django.urls import include, path, reverse_lazy
-
-from django.conf import settings
-
 
 
 urlpatterns = [
@@ -26,12 +23,11 @@ urlpatterns = [
         ),
         name='registration',
     ),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # *1
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-handler404 = 'core.views.page_not_found'  # по умолчанию тут - django.views.defaults.page_not_found
+handler404 = 'core.views.page_not_found'
 
 if settings.DEBUG:
-    import debug_toolbar
     urlpatterns += (path('__debug__/', include(debug_toolbar.urls)),)
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

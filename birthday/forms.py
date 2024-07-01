@@ -4,7 +4,10 @@ from django.core.exceptions import ValidationError
 from django.core.mail import send_mail
 from .models import Birthday, Congratulations
 
-BEATLES = {'Джон Леннон', 'Пол Маккартни', 'Джордж Харрисон', 'Ринго Старр'}
+BEATLES = {'Джон Леннон',
+           'Пол Маккартни',
+           'Джордж Харрисон',
+           'Ринго Старр'}
 
 class BirthdayForm(forms.ModelForm):
 
@@ -14,7 +17,7 @@ class BirthdayForm(forms.ModelForm):
       #  fields = '__all__'
         widgets = {
             'birthday': forms.DateInput(attrs={'type': 'date'})
-        }  
+        }
     
     def clean_first_name(self):
         first_name = self.cleaned_data['first_name']

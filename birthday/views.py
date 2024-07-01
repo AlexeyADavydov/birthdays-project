@@ -13,8 +13,6 @@ from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 
 
-
-
 @login_required
 def simple_view(request):
     return HttpResponse('Страница для залогиненых пользователей!')
@@ -27,11 +25,6 @@ class BirthdayListView(ListView):
     ).select_related('author') # Изучить ещё раз оптимизацию
     ordering = 'id'
     paginate_by = 10
-
-
-# class BirthdayMixin:
-#     model = Birthday
-#     success_url = reverse_lazy('birthday:list')
 
 
 class BirthdayCreateView(LoginRequiredMixin, CreateView):

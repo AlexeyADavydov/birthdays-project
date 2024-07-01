@@ -20,6 +20,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='birthday',
             name='tag',
-            field=models.ManyToManyField(blank=True, help_text='Удерживайте Ctrl для выбора нескольких вариантов', to='birthday.Tag', verbose_name='Теги'),
+            field=models.ManyToManyField(blank=True, help_text='', to='birthday.Tag', verbose_name='Теги'),
         ),
     ]
